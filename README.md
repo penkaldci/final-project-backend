@@ -14,7 +14,7 @@ To get started with the project, follow these steps:
    - `express`: ^4.18.2
    - `http-status-codes`: ^2.3.0
    - `mongoose`: ^8.0.0
-     Run `npm install cors dotenv express http-status-codes mongoose` to install them.
+   - Run `npm install cors dotenv express http-status-codes mongoose` to install them.
 
 3. # Development Dependencies
 
