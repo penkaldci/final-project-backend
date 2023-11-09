@@ -7,7 +7,8 @@ This project contains the backend implementation for managing cakes using a REST
 To get started with the project, follow these steps:
 
 1. Clone the project repository to your local machine: `git clone git@github.com:penkaldci/final-project-backend.git`.
-2. Install the project dependencies by running `npm install`. The following dependencies are used in this project:
+2. Navigate to the server directory `cd server`.
+3. Install the project dependencies by running `npm install`. The following dependencies are used in this project:
 
    - `cors`: ^2.8.5
    - `dotenv`: ^16.3.1
@@ -16,7 +17,7 @@ To get started with the project, follow these steps:
    - `mongoose`: ^8.0.0
    - Run `npm install cors dotenv express http-status-codes mongoose` to install them.
 
-3. # Development Dependencies
+4. # Development Dependencies
 
 These are the dependencies that are required to run the project in development mode.
 
