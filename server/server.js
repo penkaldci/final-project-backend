@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import express from "express";
 import cors from "cors";
 import cakeRoutes from "./routes/cakeRoutes.js";
+import userRoutes from "./routes/userRoutes.js";
 
 
 dotenv.config();
@@ -27,7 +28,9 @@ mongoose
   });
 
 // Routes
+//http://localhost:3001
 app.use("/cakes", cakeRoutes);
+app.use("/user", userRoutes);
 
 
 // Server instance

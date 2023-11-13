@@ -8,12 +8,12 @@ const router = express.Router();
 //router.use(logCombination); //make middleware active from here (all router endpoints)
 
 //====READ ===//
-//GET list of planets
+//GET list of cakes
 //http://localhost:3001/cakes
 router.get("/", getAllCakes);
 
 //====READ ===//
-//GET planet by id
+//GET cake by id
 //http://localhost:3001/cakes/:id
 
 router.get("/:id", getCakeById);
