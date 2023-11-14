@@ -1,6 +1,7 @@
 import { StatusCodes } from "http-status-codes";
 import { validationResult } from "express-validator";
 import User from "../models/User.js";
+import bcrypt from "bcrypt";
 
 //* Create new user
 
@@ -28,12 +29,16 @@ export const createUser = async (req, res) => {
         .json({ message: "Email already registered!" });
     }
 
-    // Creating new user
+    // Hashing before adding to DB
+    const saltRounds = 10;
+    const hashedPassword = await bcrypt.hash(password, saltRounds);
+
+    // Creating new user with hashed password
     const newUser = await User.create({
       firstName,
       lastName,
       email,
-      password,
+      password: hashedPassword,
       address: {
         street,
         houseNumber,
@@ -42,7 +47,6 @@ export const createUser = async (req, res) => {
       },
     });
 
-    //
     return res
       .status(StatusCodes.CREATED)
       .json({ message: "User created", newUser });
