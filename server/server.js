@@ -1,18 +1,17 @@
 import mongoose from "mongoose";
-import dotenv from "dotenv";
+import 'dotenv/config'
 import express from "express";
 import cors from "cors";
 import cakeRoutes from "./routes/cakeRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
+import authRoutes from "./routes/authRoutes.js";
 
 
-dotenv.config();
 // Middleware
 const app = express();
 app.use(cors());
 
 app.use(express.json());
-
 
 // Database connection
 mongoose
@@ -31,12 +30,12 @@ mongoose
 //http://localhost:3001
 app.use("/cakes", cakeRoutes);
 app.use("/user", userRoutes);
-
+app.use("/auth", authRoutes);
 
 // Server instance
 
+const PORT = process.env.PORT || 3000;
 
-app.listen(3001, () => {
-    console.log("Server is listening....😃");
-  });
-  
+app.listen(PORT, () => {
+  console.log(`Server is listening on ${PORT} ....😃`);
+});
