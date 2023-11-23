@@ -38,23 +38,6 @@ export const userRegistrationRules = () => {
         }
         return true;
       }),
-    body("address.street")
-      .trim()
-      .notEmpty()
-      .withMessage('Field "street" cannot be empty')
-      .customSanitizer(capitalizeFirstLetter),
-    body("address.houseNumber")
-      .trim()
-      .notEmpty()
-      .withMessage('Field "houseNumber" cannot be empty'),
-    body("address.postcode")
-      .trim()
-      .notEmpty()
-      .withMessage('Field "postcode" cannot be empty'),
-    body("address.city")
-      .trim()
-      .notEmpty()
-      .withMessage('Field "city" cannot be empty')
-      .customSanitizer(capitalizeFirstLetter),
   ];
 };
+
