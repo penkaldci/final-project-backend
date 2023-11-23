@@ -17,10 +17,10 @@ const userSchema = new Schema(
     },
     password: { type: String, required: true },
     address: {
-      street: { type: String, required: true },
-      houseNumber: { type: String, required: true },
-      postcode: { type: String, required: true },
-      city: { type: String, required: true },
+      street: { type: String },
+      houseNumber: { type: String },
+      postcode: { type: String },
+      city: { type: String },
     },
   },
   { timestamps: true }

@@ -1,7 +1,8 @@
 import express from "express";
 
-import { createUser } from "../controllers/userControllers.js";
+import { createUser, addUserAddress } from "../controllers/userControllers.js";
 import {userRegistrationRules} from "../middleware/userRegistrationRules.js";
+import { addAddressRules } from "../middleware/addressRules.js";
 
 const router = express.Router();
 
@@ -9,5 +10,6 @@ const router = express.Router();
 //http://localhost:3001/user/create
 
 router.post("/create", userRegistrationRules(), createUser);
+router.post("/:userId/add-address", addAddressRules(), addUserAddress);
 
 export default router;

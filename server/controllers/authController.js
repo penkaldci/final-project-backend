@@ -38,7 +38,7 @@ export const loginUser = async (req, res) => {
 
     return res
       .status(StatusCodes.OK)
-      .json({ message: "Login successful", email: email, token });
+      .json({ message: "Login successful", email: email, firstName: user.firstName, token, id: user._id });
   } catch (error) {
     return res
       .status(StatusCodes.INTERNAL_SERVER_ERROR)
