@@ -10,14 +10,20 @@ To get started with the project, follow these steps:
 2. Navigate to the server directory `cd server`.
 3. Install the project dependencies by running `npm install`. The following dependencies are used in this project:
 
-   - `cors`: ^2.8.5
-   - `dotenv`: ^16.3.1
-   - `express`: ^4.18.2
-   - `http-status-codes`: ^2.3.0
-   - `mongoose`: ^8.0.0
-   - Run `npm install cors dotenv express http-status-codes mongoose` to install them.
+- `bcrypt`: ^5.1.1
+- `cors`: ^2.8.5
+- `dotenv`: ^16.3.1
+- `express`: ^4.18.2
+- `express-validator`: ^7.0.1
+- `http-status-codes`: ^2.3.0
+- `jsonwebtoken`: ^9.0.2
+- `mongoose`: ^8.0.0
+- `validator`: ^13.11.0
 
-4. # Development Dependencies
+   - Run `npm install cors dotenv express http-status-codes mongoose bcrypt express-validator jsonwebtoken validator
+` to install them.
+
+5. # Development Dependencies
 
 These are the dependencies that are required to run the project in development mode.
 
