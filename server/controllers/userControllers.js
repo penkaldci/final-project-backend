@@ -4,8 +4,20 @@ import { verifyJwt } from "../helpers/tokenGenerator.js";
 import User from "../models/User.js";
 import bcrypt from "bcrypt";
 
-//* Create new user
+// Get all users
 
+export const getAllUsers = async (req, res) => {
+  try {
+    //we're sending the list of users to the client
+    const users = await User.find();
+    return res.status(StatusCodes.OK).json(users);
+  } catch (error) {
+    res
+      .status(StatusCodes.INTERNAL_SERVER_ERROR)
+      .json({ message: error.message });
+  }
+};
+//* Create new user
 export const createUser = async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
@@ -59,7 +71,6 @@ export const createUser = async (req, res) => {
   }
 };
 
-
 export const addUserAddress = async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
@@ -68,7 +79,7 @@ export const addUserAddress = async (req, res) => {
       .json({ message: "ValidationError occurred", errors: errors.array() });
   }
 
-  const userId = req.params.userId; 
+  const userId = req.params.userId;
   const { street, houseNumber, postcode, city } = req.body;
 
   try {
