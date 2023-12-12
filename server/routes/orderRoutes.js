@@ -7,6 +7,7 @@ const router = express.Router();
 router.get('/orders', getAllOrders);
 
 // Route to create a new order
+//http:localhost:3001/api/orders
 router.post('/orders', createOrder);
 
 export default router;

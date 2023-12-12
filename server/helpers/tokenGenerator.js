@@ -14,7 +14,6 @@ export function generateJwt(userId) {
 
     return token;
   } catch (error) {
-  
     console.error("Error generating token:", error.message);
     throw new Error("Token generation failed");
   }
