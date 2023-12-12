@@ -3,10 +3,13 @@ import Cake from "../models/Cake.js";
 
 //* Get all cakes
 export const getAllCakes = async (req, res) => {
-  const cakes = await Cake.find();
-
-  //we're sending the list of cakes to the client
-  return res.status(StatusCodes.OK).json(cakes);
+  try {
+    //we're sending the list of cakes to the client
+    const cakes = await Cake.find();
+    return res.status(StatusCodes.OK).json(cakes);
+  } catch (error) {
+    res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message: error.message });
+  }
 };
 //* Get cake by id
 export const getCakeById = async (req, res) => {
