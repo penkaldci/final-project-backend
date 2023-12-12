@@ -5,6 +5,7 @@ import cors from "cors";
 import cakeRoutes from "./routes/cakeRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 import authRoutes from "./routes/authRoutes.js";
+import contactRoutes from "./routes/contactRoutes.js";
 import orderRoutes from "./routes/orderRoutes.js"
 
 
@@ -32,6 +33,7 @@ mongoose
 app.use("/cakes", cakeRoutes);
 app.use("/user", userRoutes);
 app.use("/auth", authRoutes);
+app.use("/contact",contactRoutes);
 app.use("/api", orderRoutes);
 
 // Server instance
